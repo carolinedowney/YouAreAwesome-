@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var awesomeImageView: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
     
-    var index = 0
+    var index = -1
+    var imageIndex = -1
+    let numberOfImages = 10
     
     // Code below executes when the app's view first loads
     override func viewDidLoad() {
@@ -46,40 +49,17 @@ class ViewController: UIViewController {
         messageLabel.text = messages[index]
         
         
+        repeat {
+            newIndex = Int.random(in: 0..<numberOfImages)
+        } while imageIndex == newIndex
         
-        
-//        messageLabel.text =  messages.randomElement()!
-        
-        
-        
-//        messageLabel.text = messages[index]
-//
-//        if index == messages.count-1 {
-//            index = 0
-//        } else {
-//            index = index + 1
-//        }
-        
-        
-//        let message1 = "You Are Awesome"
-//        let message2 = "You Are Great"
-//        let message3 = "You Are Amazing"
-//
-//        if messageLabel.text == message1 {
-//            messageLabel.text = message2
-//        } else if messageLabel.text == message2 {
-//            messageLabel.text = message3
-//
-//        } else {
-//            messageLabel.text = message1
-//        }
+        imageIndex = newIndex
+        awesomeImageView.image = UIImage(named: "image\(imageIndex)")
         
     }
- 
-    }
-    
 
-    
+        
+}
 
     
 
