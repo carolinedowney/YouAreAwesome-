@@ -24,9 +24,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-hZ-I0H">
-                                <rect key="frame" x="155" y="117" width="104" height="160"/>
+                                <rect key="frame" x="290" y="227" width="104" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ulh-Tm-cLS"/>
+                                </constraints>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
+                                    <action selector="messageLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c6n-sZ-10l"/>
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GD2-vr-Ges"/>
                                 </connections>
                             </button>
@@ -36,24 +40,44 @@
                                     <constraint firstAttribute="height" constant="423" id="V29-nb-ETO"/>
                                 </constraints>
                             </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Md-Jnz">
+                                <rect key="frame" x="133" y="232" width="51" height="31"/>
+                                <connections>
+                                    <action selector="soundSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Dio-dY-tgS"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMA-yB-8Ql">
+                                <rect key="frame" x="20" y="237" width="91" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ArB-ro-qgg"/>
+                                    <constraint firstAttribute="width" constant="91" id="SgD-mg-QKc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mtB-ON-tvF" firstAttribute="top" secondItem="6H0-hZ-I0H" secondAttribute="bottom" constant="16" id="38t-AP-04W"/>
+                            <constraint firstItem="6H0-hZ-I0H" firstAttribute="trailing" secondItem="DLK-wu-OpS" secondAttribute="trailing" id="4Va-N9-gza"/>
+                            <constraint firstItem="WI2-Md-Jnz" firstAttribute="top" secondItem="DLK-wu-OpS" secondAttribute="bottom" constant="123" id="9CK-jZ-iMH"/>
                             <constraint firstItem="mtB-ON-tvF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AU2-VH-IpW"/>
-                            <constraint firstItem="mtB-ON-tvF" firstAttribute="centerX" secondItem="6H0-hZ-I0H" secondAttribute="centerX" id="HcH-2a-H7s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mtB-ON-tvF" secondAttribute="bottom" constant="20" id="KcQ-Wo-2lj"/>
-                            <constraint firstItem="6H0-hZ-I0H" firstAttribute="top" secondItem="DLK-wu-OpS" secondAttribute="bottom" constant="8" id="OIQ-Rd-IHc"/>
+                            <constraint firstItem="mtB-ON-tvF" firstAttribute="top" secondItem="6H0-hZ-I0H" secondAttribute="bottom" constant="26" id="RKW-zT-DK8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mtB-ON-tvF" secondAttribute="trailing" constant="20" id="VXO-Ki-rAZ"/>
+                            <constraint firstItem="xMA-yB-8Ql" firstAttribute="top" secondItem="DLK-wu-OpS" secondAttribute="bottom" constant="128" id="bgr-KL-Q2t"/>
                             <constraint firstItem="DLK-wu-OpS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="nTg-Rl-Son"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DLK-wu-OpS" secondAttribute="trailing" constant="20" id="qIt-gv-dbc"/>
+                            <constraint firstItem="xMA-yB-8Ql" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tec-2h-rEI"/>
                             <constraint firstItem="DLK-wu-OpS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="u4m-Kl-YPb"/>
+                            <constraint firstItem="WI2-Md-Jnz" firstAttribute="leading" secondItem="xMA-yB-8Ql" secondAttribute="trailing" constant="22" id="z5O-yr-fcl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="awesomeImageView" destination="mtB-ON-tvF" id="NJY-eI-exa"/>
-                        <outlet property="messageLabel" destination="DLK-wu-OpS" id="pio-I7-VQt"/>
+                        <outlet property="messageLabel" destination="6H0-hZ-I0H" id="Myp-mA-lfg"/>
+                        <outlet property="soundSwitch" destination="WI2-Md-Jnz" id="3iy-wQ-Iok"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
